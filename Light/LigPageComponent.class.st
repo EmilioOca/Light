@@ -26,14 +26,14 @@ LigPageComponent >> app: anApp [
 ]
 
 { #category : #actions }
-LigPageComponent >> asCallbackOn: aBrush" [
-	aBrush tbsNavItem beActiveIf: [ self isActive ]."
+LigPageComponent >> asCallbackOn: aBrush [
+	"aBrush tbsNavItem beActiveIf: [ self isActive ]."
 	aBrush anchor callback: [ self holder present: self ]; with: self title.
 ]
 
 { #category : #actions }
-LigPageComponent >> asPillOn: html" [
-	aBrush tbsNavItem beActiveIf: [ self isActive ]."
+LigPageComponent >> asPillOn: html [
+	"aBrush tbsNavItem beActiveIf: [ self isActive ]."
 	html tbsNavItem 
 		beActiveIf: [ self isActive ]; 
 		with: [ self asCallbackOn: html ].
