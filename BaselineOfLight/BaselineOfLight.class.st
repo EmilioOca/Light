@@ -9,5 +9,6 @@ BaselineOfLight >> baseline: spec [
 	<baseline>
 	spec
 		for: #common
-		do: [ spec package: 'Light' ]
+		do: [ spec package: 'Light'.
+			   spec package: 'EFO-LCF-Model'. ]
 ]
