@@ -9,6 +9,5 @@ BaselineOfLight >> baseline: spec [
 	<baseline>
 	spec
 		for: #common
-		do: [ spec package: 'Light'.
-	spec group: 'default' with: #('FileDialog') ]
+		do: [ spec package: 'Light' ]
 ]
