@@ -227,7 +227,7 @@ TransPair >> renderAccurateEditControlOn: chapterView with: html anchor: anchor 
 				(html image)
 					title: 'editar';
 					height: 16;
-					url: PRBlueprintLibrary / #correctPng ]
+					url: LightLibrary / #correctPng ]
 	].
 ]
 
@@ -255,7 +255,7 @@ TransPair >> renderEditControlOn: chapterView with: html anchor: anchor [
 				(html image)
 					title: 'editar';
 					height: 16;
-					url: PRBlueprintLibrary / #editPng ]
+					url: LightLibrary / #editPng ]
 	].
 ]
 
@@ -285,7 +285,7 @@ TransPair >> renderFlagboxOn: chapter with: html [
 		with: [ (html image)
 					title: 'Comentarios al corrector';
 "					height: 20;"
-					url: PRBlueprintLibrary / #flagredPng ]
+					url: LightLibrary / #flagredPng ]
 				
 				"'Open Lightbox'"
 ]
@@ -297,7 +297,7 @@ TransPair >> renderLockControlOn: chapterView with: html fragment: anchor [
 						(html image)
 							title: 'edición deshabilitada para este capítulo';
 							height: 20;
-							url: PRBlueprintLibrary / #lockclosedgrayPng
+							url: LightLibrary / #lockclosedgrayPng
 		] ifFalse: [
 			self freezed ifTrue: [ 
 				(html anchor)
@@ -307,7 +307,7 @@ TransPair >> renderLockControlOn: chapterView with: html fragment: anchor [
 						(html image)
 							title: 'desbloquear edición';
 							height: 20;
-							url: PRBlueprintLibrary / #lockopenPng ]
+							url: LightLibrary / #lockopenPng ]
 			] ifFalse: [ 
 				(html anchor)
 					callback: [ self freezed: true ];
@@ -316,7 +316,7 @@ TransPair >> renderLockControlOn: chapterView with: html fragment: anchor [
 						(html image)
 							title: 'bloquear edición';
 							height: 20;
-							url: PRBlueprintLibrary / #lockclosedPng ]
+							url: LightLibrary / #lockclosedPng ]
 			]
 		]
 	]

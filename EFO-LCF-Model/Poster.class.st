@@ -146,7 +146,7 @@ Poster >> renderEditControlOn: chapterView with: html [
 				(html image)
 					title: 'cambiar imagen';
 					height: 16;
-					url: PRBlueprintLibrary / #editPng ]
+					url: LightLibrary / #editPng ]
 	].
 ]
 

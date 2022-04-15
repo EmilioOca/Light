@@ -1,6 +1,6 @@
 Extension { #name : #TimeZone }
 
-{ #category : #'*efo-lcf-model' }
+{ #category : #'*Light' }
 TimeZone class >> default [
  	"Answer the default time zone - GMT"
  
@@ -8,7 +8,7 @@ TimeZone class >> default [
  
 ]
 
-{ #category : #'*efo-lcf-model' }
+{ #category : #'*Light' }
 TimeZone class >> timeZones [
 
 	^ {

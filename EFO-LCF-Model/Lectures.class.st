@@ -259,7 +259,7 @@ Lectures >> renderEditControlOn: chapterView with: html [
 				(html image)
 					title: 'completar lecturas';
 					height: 16;
-					url: PRBlueprintLibrary / #editPng ]
+					url: LightLibrary / #editPng ]
 	].
 ]
 

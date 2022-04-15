@@ -181,10 +181,10 @@ TiempoLiturgico >> renderChapter: aPost on: html [
 		aPost freezed ifTrue: [ 
 			(html anchor)
 				callback: [ aPost freezed: false ];
-				with: [ html image title: 'desbloquear edición'; height: 20; url: (PRBlueprintLibrary  / #lockopenPng).] ]
+				with: [ html image title: 'desbloquear edición'; height: 20; url: (LightLibrary  / #lockopenPng).] ]
 		ifFalse: [ (html anchor)
 				callback: [ aPost freezed: true ];
-				with: [ html image title: 'bloquear edición'; height: 20; url: (PRBlueprintLibrary  / #lockclosedPng).
+				with: [ html image title: 'bloquear edición'; height: 20; url: (LightLibrary  / #lockclosedPng).
 					] ] 
 	] .
 	
@@ -203,10 +203,10 @@ TiempoLiturgico >> renderChapter: aPost on: html using: view [
 		aPost freezed ifTrue: [ 
 			(html anchor)
 				callback: [ aPost freezed: false ];
-				with: [ html image title: 'desbloquear edición para todo el capítulo'; height: 20; url: (PRBlueprintLibrary  / #lockopenPng).] ]
+				with: [ html image title: 'desbloquear edición para todo el capítulo'; height: 20; url: (LightLibrary  / #lockopenPng).] ]
 		ifFalse: [ (html anchor)
 				callback: [ aPost freezed: true ];
-				with: [ html image title: 'bloquear edición para todo el capítulo'; height: 20; url: (PRBlueprintLibrary  / #lockclosedPng).
+				with: [ html image title: 'bloquear edición para todo el capítulo'; height: 20; url: (LightLibrary  / #lockclosedPng).
 					] ] 
 	] .
 	

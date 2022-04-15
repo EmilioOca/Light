@@ -26,6 +26,7 @@ LightDistribution class >> initialize [
 				addLibrary: TBSExamplesLibrary;
 				addLibrary: TBSJasnyDeploymentLibrary;
 				addLibrary: TBSVerticalTabsDeploymentLibrary;
+				addLibrary: PRBlueprintLibrary;
 				"addLibrary: PTDeploymentLibrary;  sriptaculous"
     			"addLibrary: SUDeploymentLibrary; sriptaculous"
 				yourself.
