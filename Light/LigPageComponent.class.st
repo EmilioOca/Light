@@ -16,6 +16,11 @@ LigPageComponent class >> newOn: app [
 ]
 
 { #category : #accessing }
+LigPageComponent >> about [
+	^ self app about
+]
+
+{ #category : #accessing }
 LigPageComponent >> app [
 	^ app
 ]
@@ -85,6 +90,11 @@ LigPageComponent >> cover [
 	^ self app cover
 ]
 
+{ #category : #accessing }
+LigPageComponent >> glosarios [
+	^ self app glosarios
+]
+
 { #category : #actions }
 LigPageComponent >> isActive [ 
 	^ self holder present = self 
@@ -104,6 +114,11 @@ LigPageComponent >> menuCiclos [
 { #category : #accessing }
 LigPageComponent >> peter [
 	^ self app peter
+]
+
+{ #category : #accessing }
+LigPageComponent >> project [
+	^ self app project
 ]
 
 { #category : #accessing }

@@ -56,6 +56,11 @@ h1 {
 ]
 
 { #category : #'page access' }
+LightDistribution >> about [
+	^ components at: #about ifAbsent: [ components at: #about put: (LigAboutPage newOn: self) ]
+]
+
+{ #category : #'page access' }
 LightDistribution >> celebrations [
 	^ self page: #celebrations
 ]
@@ -115,6 +120,11 @@ LightDistribution >> cover [
 	^ self page: #cover
 ]
 
+{ #category : #'page access' }
+LightDistribution >> glosarios [
+	^ components at: #glosarios ifAbsent: [ components at: #glosarios put: (LigGlosariosPage newOn: self) ]
+]
+
 { #category : #rendering }
 LightDistribution >> initialize [
 	super initialize.
@@ -150,6 +160,11 @@ LightDistribution >> page: pageSymbol [
 { #category : #'page access' }
 LightDistribution >> peter [
 	^ self page: #peter
+]
+
+{ #category : #'page access' }
+LightDistribution >> project [
+	^ components at: #project ifAbsent: [ components at: #project put: (LigProjectPage newOn: self) ]
 ]
 
 { #category : #rendering }
