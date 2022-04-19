@@ -11,7 +11,7 @@ Class {
 
 { #category : #accessing }
 LigBookPage >> bookContent [
-	^ bookContent ifNil: [ bookContent := LigBookContentComponent newHolded: self ]
+	^ bookContent ifNil: [ bookContent := LigBookChapterComponent newHolded: self ]
 ]
 
 { #category : #accessing }

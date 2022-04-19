@@ -501,6 +501,15 @@ LightModelChapter >> moment: aDate [
 ]
 
 { #category : #accessing }
+LightModelChapter >> nextChapter [
+	| idx |
+	idx := self book chapters find: self.
+	^ (idx = self book chapters size ) 
+		ifTrue: [ self book chapters first ]
+		ifFalse: [ self book chapters at: idx + 1 ].
+]
+
+{ #category : #accessing }
 LightModelChapter >> outline [
 	^ outline   ifNil: [ outline := OrderedCollection new ].
 ]
@@ -528,6 +537,15 @@ LightModelChapter >> prayer [
 { #category : #accessing }
 LightModelChapter >> prayer: aByteString [ 
 	prayer := aByteString
+]
+
+{ #category : #accessing }
+LightModelChapter >> previousChapter [
+	| idx |
+	idx := self book chapters find: self.
+	^ (idx = 1 ) 
+		ifTrue: [ self book chapters last ]
+		ifFalse: [ self book chapters at: idx - 1 ].
 ]
 
 { #category : #accessing }

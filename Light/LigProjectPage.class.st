@@ -26,5 +26,5 @@ LigProjectPage >> renderContentOn: html [
 
 { #category : #accessing }
 LigProjectPage >> title [ 
-	^ 'Projecto'
+	^ 'Proyecto'
 ]

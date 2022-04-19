@@ -40,6 +40,19 @@ LightModelBookCicleTest >> testModelBookFileName [
 ]
 
 { #category : #tests }
+LightModelBookCicleTest >> testModelBookNextChapter [
+
+	| book |
+	book := LightModelBookCicle newOn: LightVariables sourceBase named: 'Book A'.
+
+ 	book load.
+			
+	self assert: ( book chapters first nextChapter ) equals:  book chapters second.
+	self assert: ( book chapters last nextChapter ) equals:  book chapters first.
+
+]
+
+{ #category : #tests }
 LightModelBookCicleTest >> testModelBookReadFromEmptyStream [
 
 	| book |
