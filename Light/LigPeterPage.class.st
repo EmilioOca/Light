@@ -41,11 +41,11 @@ el SIGNIS Film Reviewing Project.'.
     html paragraph: 'Canberra (High School), 1966-7, 1970.'.
     html paragraph: 'Theology and Scripture'.
     html paragraph: 'Canberra, 1968-71'.
-    html paragraph: 'Theology and Scripture
-:Yarra Theological Union (Melbourne College of Divinity) 1972-1998
-;National Pastoral Institute
-:Melbourne, 1973-1988,(including Diploma in Social Communications).
-;Director
+    html paragraph: 'Theology and Scripture'.
+    html paragraph: 'Yarra Theological Union (Melbourne College of Divinity) 1972-1998'.
+    html paragraph: 'National Pastoral Institute'.
+    html paragraph: 'Melbourne, 1973-1988,(including Diploma in Social Communications).'.
+    html paragraph: 'Director
 :Australian Catholic Film Office, 1996-8
 
 ;OCIC (Organisation Catholique Internatiionale du Cinema)
