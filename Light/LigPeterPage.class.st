@@ -23,27 +23,20 @@ el SIGNIS Film Reviewing Project.'.
 						with: 'signis'.
 		html image url: 'http://signis.net/userfiles/redacao/noticias/70e6775d30af7d7a983fc85173f1c140.jpg'
 	].
-    html paragraph: '!!!CV/Breve
+    html paragraph: '!!!CV/Breve'.
+    html paragraph: 'Nacido: Sydney, NSW, Australia, 8th August 1939.'.
+    html paragraph: 'Educacion: Bowral, NSW.'.
+    html paragraph: 'Orden Sacerdotal: Rome, 3rd April, 1965'.
 
+    html paragraph: 'Estudios'.
+    html paragraph: 'Arts Degree MA Qual'.
+    html paragraph: '(Australian History), Australian National University, Canberra, 1960-8'.
+    html paragraph: 'Theology Degree'.
+    html paragraph: 'Gregorian, Rome, 1962-6'.
+    html paragraph: 'Honorary Doctorate in Theology'.
+    html paragraph: 'Melbourne, College of Divinity, Australia, 2008.'.
 
-;Nacido
-:Sydney, NSW, Australia, 8th August 1939.<br>
-;Educacion
-:Bowral, NSW.
-;Orden Sacerdotal
-:Rome, 3rd April, 1965.
-
-
-!Estudios
-;Arts Degree MA Qual
-:(Australian History), Australian National University, Canberra, 1960-8:
-;Theology Degree
-:Gregorian, Rome, 1962-6.
-;Honorary Doctorate in Theology
-:Melbourne, College of Divinity, Australia, 2008.
-
-
-!Academia
+	html paragraph: 'Academia
 ;Daramalan College
 :Canberra (High School), 1966-7, 1970.
 ;Theology and Scripture
