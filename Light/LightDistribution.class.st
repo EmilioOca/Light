@@ -37,6 +37,16 @@ LightDistribution class >> initialize [
 	"WAAdmin clearSessions to clear all sessions related to  updateUrl: and initialRequest:"
 ]
 
+{ #category : #'as yet unclassified' }
+LightDistribution class >> reloadReset [ 
+			Metacello new baseline:'Light'; 
+			   			     repository: 'github://EmilioOca/Light:main/light'; 
+		  					  ignoreImage;
+							  onConflictUseIncoming; 
+							  load.
+			self initialize
+]
+
 { #category : #rendering }
 LightDistribution >> Estyle [
     ^ 'h1 { text-align: center; }

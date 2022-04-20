@@ -194,7 +194,8 @@ el SIGNIS Film Reviewing Project.'.
 		html anchor callback: [ 
 			Metacello new baseline:'Light'; 
 			   			     repository: 'github://EmilioOca/Light:main/light'; 
-							  onConflictUseLoaded; 
+		  					  ignoreImage;
+							  onConflictUseIncoming; 
 							  load.
 			LightDistribution initialize  ]; with: 'recargar...' ]
 ]
