@@ -195,7 +195,8 @@ el SIGNIS Film Reviewing Project.'.
 			Metacello new baseline:'Light'; 
 			   			     repository: 'github://EmilioOca/Light:main/light'; 
 							  onConflictUseLoaded; 
-							  load ]; with: 'recargar...' ]
+							  load.
+			LightDistribution initialize  ]; with: 'recargar...' ]
 ]
 
 { #category : #rendering }
