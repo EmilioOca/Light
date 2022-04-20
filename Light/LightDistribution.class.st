@@ -42,7 +42,8 @@ LightDistribution class >> reloadReset [
 			Metacello new baseline:'Light'; 
 			   			     repository: 'github://EmilioOca/Light:main/light'; 
 		  					  ignoreImage;
-							  onConflictUseIncoming; 
+							  onWarningLog;
+							  silently;
 							  load.
 			self initialize
 ]
