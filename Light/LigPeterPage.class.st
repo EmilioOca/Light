@@ -192,12 +192,7 @@ el SIGNIS Film Reviewing Project.'.
 :Member of SIGNIS Jury, 2009.'.
 	html paragraph: [ 
 		html anchor callback: [ 
-			Metacello new baseline:'Light'; 
-			   			     repository: 'github://EmilioOca/Light:main/light'; 
-		  					  ignoreImage;
-							  onConflictUseIncoming; 
-							  load.
-			LightDistribution initialize  ]; with: 'recargar...' ]
+			LightDistribution reloadReset  ]; with: 'recargar...' ]
 ]
 
 { #category : #rendering }
