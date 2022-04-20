@@ -197,6 +197,12 @@ el SIGNIS Film Reviewing Project.'.
 
 ;Havana International Film Festival.
 :Member of SIGNIS Jury, 2009.'.
+	html paragraph: [ 
+		html anchor callback: [ 
+			Metacello new baseline:'Light'; 
+			   			     repository: 'github://EmilioOca/Light:main/light'; 
+							  onConflictUseLoaded; 
+							  load ]; with: 'recargar...' ]
 ]
 
 { #category : #rendering }
