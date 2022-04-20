@@ -36,10 +36,10 @@ el SIGNIS Film Reviewing Project.'.
     html paragraph: 'Honorary Doctorate in Theology'.
     html paragraph: 'Melbourne, College of Divinity, Australia, 2008.'.
 
-	html paragraph: 'Academia
-;Daramalan College
-:Canberra (High School), 1966-7, 1970.
-;Theology and Scripture
+	html paragraph: 'Academia'.
+    html paragraph: 'Daramalan College'.
+    html paragraph: 'Canberra (High School), 1966-7, 1970.'.
+    html paragraph: 'Theology and Scripture
 :Canberra, 1968-71
 ;Theology and Scripture
 :Yarra Theological Union (Melbourne College of Divinity) 1972-1998
