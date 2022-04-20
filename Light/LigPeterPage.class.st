@@ -39,9 +39,9 @@ el SIGNIS Film Reviewing Project.'.
 	html paragraph: 'Academia'.
     html paragraph: 'Daramalan College'.
     html paragraph: 'Canberra (High School), 1966-7, 1970.'.
+    html paragraph: 'Theology and Scripture'.
+    html paragraph: 'Canberra, 1968-71'.
     html paragraph: 'Theology and Scripture
-:Canberra, 1968-71
-;Theology and Scripture
 :Yarra Theological Union (Melbourne College of Divinity) 1972-1998
 ;National Pastoral Institute
 :Melbourne, 1973-1988,(including Diploma in Social Communications).
