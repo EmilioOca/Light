@@ -45,7 +45,7 @@ LightDistribution class >> reloadReset [
 							  onWarningLog;
 							  silently;
 							  load.
-			self initialize.
+			self initialize
 ]
 
 { #category : #rendering }
