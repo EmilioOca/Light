@@ -39,14 +39,12 @@ LightDistribution class >> initialize [
 
 { #category : #'as yet unclassified' }
 LightDistribution class >> reloadReset [ 
-	[ 
 			Metacello new baseline:'Light'; 
 			   			     repository: 'github://EmilioOca/Light:main/light'; 
-"		  					  ignoreImage;"
-"							  onConflictUseIncoming;"
-"							  silently;"
+		  					  ignoreImage;
+							  onWarningLog;
+							  silently;
 							  load.
-							] on: MetacelloSkipDirtyPackageLoad do: [:ex | ex resume: false. ].
 			self initialize.
 ]
 
