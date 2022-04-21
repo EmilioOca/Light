@@ -11,7 +11,7 @@ Class {
 { #category : #'as yet unclassified' }
 LightDistribution class >> efoRegister [
 	"register the component in Seaside Config so it is available at host/light
-	self efoRegister
+	self efoRegister.
 	"
    self initialize.
 ]
