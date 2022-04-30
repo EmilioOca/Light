@@ -39,13 +39,14 @@ LightDistribution class >> initialize [
 
 { #category : #'as yet unclassified' }
 LightDistribution class >> reloadReset [ 
-			Metacello new baseline:'Light'; 
-			   			     repository: 'github://EmilioOca/Light:main/light'; 
-		  					  ignoreImage;
-							  onWarningLog;
-							  silently;
-							  load.
-			self initialize
+| repo aRemote localBranch remoteBranch |
+repo := IceRepository registry detect: [ :each | each includesPackageNamed: 'Light' ].
+aRemote := IceGitRemote name: 'origin' url: 'https://github.com/EmilioOca/Light.git'.
+aRemote localRepository: repo.
+localBranch := IceGitLocalBranch named: 'refs/heads/main' inRepository: repo.
+aRemote fetchBranch: localBranch.
+remoteBranch := aRemote remoteBranchNamed: localBranch name ifAbsent: [ ^ localBranch ].
+repo workingCopy mergeCommit: remoteBranch commit.
 ]
 
 { #category : #rendering }
