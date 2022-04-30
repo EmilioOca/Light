@@ -45,10 +45,9 @@ el SIGNIS Film Reviewing Project.'.
     html paragraph: 'Yarra Theological Union (Melbourne College of Divinity) 1972-1998'.
     html paragraph: 'National Pastoral Institute'.
     html paragraph: 'Melbourne, 1973-1988,(including Diploma in Social Communications).'.
-    html paragraph: 'Director
-:Australian Catholic Film Office, 1996-8
-
-;OCIC (Organisation Catholique Internatiionale du Cinema)
+    html paragraph: 'Director'.
+    html paragraph: ':Australian Catholic Film Office, 1996-8'.
+    html paragraph: 'OCIC (Organisation Catholique Internatiionale du Cinema)
 :Pacific region, President, 1989-1998.
 :Directors'' Committee, 1990-1998.
 :World President, 1998-2001
