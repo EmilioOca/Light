@@ -8,7 +8,7 @@ Class {
 		'path',
 		'filename'
 	],
-	#category : #'EFO-LCF-Model'
+	#category : #'Light-Model'
 }
 
 { #category : #'as yet unclassified' }

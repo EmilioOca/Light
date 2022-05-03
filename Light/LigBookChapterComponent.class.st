@@ -30,14 +30,17 @@ LigBookChapterComponent >> holder: aLigCicloPage [
 
 { #category : #rendering }
 LigBookChapterComponent >> renderChapterOn: html [
-	html
-		div: [ self renderNavHeadingOn: html.
-			html
-				div: [ self renderSingle: self chapter date on: html.
-					self renderLecturesOn: html.
-					self renderSingle: self chapter crest on: html ] ].
+	html div: [ 
+		self renderNavHeadingOn: html.
+		html div: [ 
+			self renderSingle: self chapter date on: html.
+			self renderLecturesOn: html.
+			self renderSingle: self chapter crest on: html 
+		] 
+	].
 	self renderSingle: self chapter film on: html.
 	self renderFilmDataOn: html.
+	self renderPosterOn: html.
 	self renderSection: self chapter outline
 		id: 'outline'
 		with: 'Outline'
@@ -129,6 +132,12 @@ LigBookChapterComponent >> renderNavOn: html chapter: prev like: arrows [
 		with:
 			arrows , prev date spa , ', ' , prev film eng
 				, prev moment prettyMoment , arrows
+]
+
+{ #category : #rendering }
+LigBookChapterComponent >> renderPosterOn: html [
+	html render: ( LightPosterComponent new: holder present poster ).
+	
 ]
 
 { #category : #rendering }
