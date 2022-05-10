@@ -5,8 +5,7 @@ Class {
 		'changes',
 		'accurate',
 		'link',
-		'path',
-		'filename'
+		'chapter'
 	],
 	#category : #'Light-Model'
 }
@@ -66,19 +65,14 @@ LightModelPoster >> comments [
 
 { #category : #accessing }
 LightModelPoster >> filename [
-	^ filename
+	^ chapter chapterFileName, '.jpg'.
+
+
 ]
 
 { #category : #accessing }
-LightModelPoster >> filename: anObject [
-	filename := anObject
-]
-
-{ #category : #accessing }
-LightModelPoster >> initializeWith: chapter [
-	path := 'resources/', chapter chapterPath, '/jpg/'.
-
-	filename := chapter chapterFileName, '.jpg'.
+LightModelPoster >> initializeWith: aChapter [
+	chapter := aChapter
 
 ]
 
@@ -117,12 +111,9 @@ LightModelPoster >> missingText [
 
 { #category : #accessing }
 LightModelPoster >> path [
-	^ path
-]
+	^ LightVariables resourceBase, '/' , chapter chapterPath, '/jpg/'.
 
-{ #category : #accessing }
-LightModelPoster >> path: anObject [
-	path := anObject
+
 ]
 
 { #category : #accessing }

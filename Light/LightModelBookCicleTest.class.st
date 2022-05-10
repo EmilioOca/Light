@@ -7,6 +7,39 @@ Class {
 	#category : #'Light-Tests'
 }
 
+{ #category : #'as yet unclassified' }
+LightModelBookCicleTest class >> sampleBookCicloA [
+
+	| book |
+	book := LightModelBookCicle newOn: LightVariables sourceBase  named: 'Book A'.
+
+ 	book load.
+	
+	^ book
+]
+
+{ #category : #tests }
+LightModelBookCicleTest >> testModelBookChapterFileName [
+
+	| book |
+	book := LightModelBookCicle newOn: LightVariables sourceBase named: 'Book A'.
+
+ 	book load.
+			
+	self assert: ( book times at: #Navidad ) chapters first chapterFileName equals: 'theholyfamily'.
+]
+
+{ #category : #tests }
+LightModelBookCicleTest >> testModelBookChapterPath [
+
+	| book |
+	book := LightModelBookCicle newOn: LightVariables sourceBase named: 'Book A'.
+
+ 	book load.
+			
+	self assert: ( book times at: #Navidad ) chapters first chapterPath equals: 'bookA'.
+]
+
 { #category : #tests }
 LightModelBookCicleTest >> testModelBookChapters [
 

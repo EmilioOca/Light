@@ -8,6 +8,11 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
+LightVariables class >> resourceBase [
+ ^ self rootPath, '/res'
+]
+
+{ #category : #'as yet unclassified' }
 LightVariables class >> rootPath [
  ^ rootPath ifNil: [ '/home/emilio/develop/lcf' ]
 ]

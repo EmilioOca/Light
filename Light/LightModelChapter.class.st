@@ -213,13 +213,13 @@ LightModelChapter >> book: aBook [
 
 { #category : #latex }
 LightModelChapter >> chapterFileName [ 
-"	^ self parent name, '_', self name."
-	^  self name.
+
+	^  self date eng asValidSelector.
 ]
 
 { #category : #latex }
 LightModelChapter >> chapterPath [
-	^ self book name
+	^ self book headTitle asValidSelector
 ]
 
 { #category : #accessing }

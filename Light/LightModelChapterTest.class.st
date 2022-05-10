@@ -7,6 +7,15 @@ Class {
 	#category : #'Light-Tests'
 }
 
+{ #category : #samples }
+LightModelChapterTest class >> samplePoster [
+
+	^ 'http://ia.media-imdb.com/images/M/MV5BMTM2NzIwMTM5NV5BMl5BanBnXkFtZTcwNjQ2MTYyMQ@@._V1._SY317_.jpg
+Accurate;
+
+'
+]
+
 { #category : #tests }
 LightModelChapterTest >> assert: lecturesLines accurate: accurate missing: missing [
 	| lectures |
@@ -70,7 +79,7 @@ LightModelChapterTest >> sampleChapter [
 	   self sampleCrest, 
 	   self sampleFilm, 
 		self sampleFilmData, 
-		self samplePoster,
+		self class samplePoster,
 		LightModelChapter outlineMarker, String cr, String cr,
 		self sampleOutline,
 		LightModelChapter commentMarker, String cr, String cr,
@@ -234,15 +243,6 @@ When Stevens, on his holiday, finally finds Miss Kento....
 ]
 
 { #category : #samples }
-LightModelChapterTest >> samplePoster [
-
-	^ 'http://ia.media-imdb.com/images/M/MV5BMTM2NzIwMTM5NV5BMl5BanBnXkFtZTcwNjQ2MTYyMQ@@._V1._SY317_.jpg
-Accurate;
-
-'
-]
-
-{ #category : #samples }
 LightModelChapterTest >> samplePrayer [
 
 	^ 'Lord, we are waiting for your coming ...erve you whenever you come. Amen.
@@ -372,7 +372,7 @@ LightModelChapterTest >> testSampleChapterRead [
 	self assert: chap crest isWrittenAs: self sampleCrest.
 	self assert: chap film isWrittenAs: self sampleFilm.
 	self assert: chap filmData isWrittenAs: self sampleFilmData.
-	self assert: chap poster isWrittenAs: self samplePoster.
+	self assert: chap poster isWrittenAs: self class samplePoster.
 	self assert: chap outline areWrittenAs: self sampleOutline.
 	self assert: chap comment areWrittenAs: self sampleComment.
 	self assert: chap gospelFocus isWrittenAs: self sampleFocus .

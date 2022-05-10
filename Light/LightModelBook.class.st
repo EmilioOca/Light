@@ -244,7 +244,7 @@ LightModelBook >> times [
 LightModelBook >> updateChild: chap [
 	( self time: chap tiempo) addChap: chap.
 	chap book: self.
-	"chap poster initializeWith: chap."
+	chap poster initializeWith: chap.
 	self chapters add: chap.
 
 ]
