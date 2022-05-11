@@ -111,7 +111,10 @@ LightModelPoster >> missingText [
 
 { #category : #accessing }
 LightModelPoster >> path [
-	^ LightVariables resourceBase, '/' , chapter chapterPath, '/jpg/'.
+	| path |
+	path := FileSystem root / chapter book path / 'jpg'.
+	path exists ifFalse: [  	path createDirectory   ].
+  ^ path pathString
 
 
 ]

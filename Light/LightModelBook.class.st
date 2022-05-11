@@ -24,6 +24,16 @@ LightModelBook >> accept: aVisitor [
 	super accept: aVisitor.
 ]
 
+{ #category : #initialize }
+LightModelBook >> bookPath [ 
+	| path |
+	path := FileSystem root / self resourceBase / 'res'.
+	path exists ifFalse: [  	path createDirectory   ].
+  ^ path pathString
+
+
+]
+
 { #category : #proyectors }
 LightModelBook >> changed [
 	^ self chapters select: [ :chapter | chapter hasChanges ]
@@ -202,6 +212,16 @@ LightModelBook >> loadFrom: aStream [
 	[ aStream nextLine beginsWith: 'MOVY' ] whileTrue: [
 		 self updateChild: (LightModelChapter readChapter: aStream )
 	]
+]
+
+{ #category : #initialize }
+LightModelBook >> path [ 
+	| path |
+	path := FileSystem root / LightVariables resourceBase / headTitle asValidSelector.
+	path exists ifFalse: [  	path createDirectory   ].
+  ^ path pathString
+
+
 ]
 
 { #category : #uncategorized }

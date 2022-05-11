@@ -219,7 +219,7 @@ LightModelChapter >> chapterFileName [
 
 { #category : #latex }
 LightModelChapter >> chapterPath [
-	^ self book headTitle asValidSelector
+	^ self book path
 ]
 
 { #category : #accessing }
@@ -517,6 +517,14 @@ LightModelChapter >> outline [
 { #category : #accessing }
 LightModelChapter >> outline: anObject [
 	outline := anObject
+]
+
+{ #category : #accessing }
+LightModelChapter >> path [ 
+	| path |
+	path := FileSystem root / self book path / self chapterFileName.
+	path exists ifFalse: [  	path createDirectory   ].
+  ^ path pathString
 ]
 
 { #category : #accessing }
