@@ -6,31 +6,38 @@ Class {
 
 { #category : #tests }
 PosterModelTest >> testPosterModelAssurePosterImage [
-	| poster chapter str |
+	| poster chapter str stream |
 
 	chapter := ( LightModelBookCicleTest sampleBookCicloA times at: #Navidad ) chapters first.
 	poster := LightModelPoster read: LightModelChapterTest samplePoster readStream.
  	poster initializeWith: chapter.
 
-	(FileSystem root / poster path / poster filename) delete.
+	poster link: 'https://webmail.dc.uba.ar/logo_2018.png'.
+	
+	(FileSystem root / poster posterPath / poster posterFilename) exists ifTrue: [ 
+		(FileSystem root / poster posterPath / poster posterFilename) delete.
+	].
 
-   self deny: (FileSystem root / poster path / poster filename) exists.
-
-	(FileSystem root / poster path  / poster filename )
-		writeStreamDo: [ :stream | 
-"			(ZnEasy get: 'http://webmail.dc.uba.ar/logo_2018.png')
-					writeOn: stream"
-					stream nextPutAll: 'bob joe'
-		].
-
-"	str := (File named: (FileSystem root / poster path / poster filename) pathString) openForWrite."
-"	str := ( File named: '/home/emilio/develop/lcf/res/bookA/jpg/theholyfamily.jpg' ) openForWrite.
-	(ZnEasy get: 'https://webmail.dc.uba.ar/logo_2018.png')
-					writeOn: str.
+   self deny: (FileSystem root / poster posterPath / poster posterFilename) exists.
+	poster assurePosterImage.
+"	stream := (FileSystem root / poster posterPath / poster posterFilename) unbufferedBinaryWriteStream.
+	stream nextPutAll: (ZnEasy get: 'https://webmail.dc.uba.ar/logo_2018.png') entity contents.
+	stream close.
 "
+   self assert: (FileSystem root / poster posterPath / poster posterFilename) exists.
 
-   self assert: (FileSystem root / poster path / poster filename) exists.
+]
 
+{ #category : #tests }
+PosterModelTest >> testPosterModelFileExtension [
+	| poster chapter str stream |
+
+	chapter := ( LightModelBookCicleTest sampleBookCicloA times at: #Navidad ) chapters first.
+	poster := LightModelPoster read: LightModelChapterTest samplePoster readStream.
+ 	poster initializeWith: chapter.
+
+	poster link: 'something.jpg'.
+   self assert: poster fileExtension equals: 'jpg'
 ]
 
 { #category : #tests }
@@ -41,7 +48,7 @@ PosterModelTest >> testPosterModelFilename [
 	poster := LightModelPoster read: LightModelChapterTest samplePoster readStream.
  	poster initializeWith: chapter.
 			
-	self assert: poster filename equals: 'theholyfamily.jpg'.
+	self assert: poster posterFilename equals: 'theholyfamily.jpg'.
 
 ]
 
@@ -53,8 +60,8 @@ PosterModelTest >> testPosterModelPath [
 	poster := LightModelPoster read: LightModelChapterTest samplePoster readStream.
  	poster initializeWith: chapter.
 			
-	self assert: poster path equals: LightVariables resourceBase, '/bookA/jpg'.
-	self assert: poster path equals: LightVariables rootPath, '/res/bookA/jpg'.
+	self assert: poster posterPath equals: LightVariables resourceBase, '/bookA/im'.
+	self assert: poster posterPath equals: LightVariables rootPath, '/res/bookA/im'.
 
 ]
 

@@ -26,7 +26,7 @@ LightModelBookCicleTest >> testModelBookChapterFileName [
 
  	book load.
 			
-	self assert: ( book times at: #Navidad ) chapters first chapterFileName equals: 'theholyfamily'.
+	self assert: ( book times at: #Navidad ) chapters first chapterFilename equals: 'theholyfamily'.
 ]
 
 { #category : #tests }
@@ -37,7 +37,8 @@ LightModelBookCicleTest >> testModelBookChapterPath [
 
  	book load.
 			
-	self assert: ( book times at: #Navidad ) chapters first chapterPath equals: 'bookA'.
+	self assert: ( book times at: #Navidad ) chapters first chapterPath equals: LightVariables rootPath, '/res/bookA'.
+	self assert: ( book times at: #Navidad ) chapters first chapterFilename equals: 'theholyfamily'.
 ]
 
 { #category : #tests }

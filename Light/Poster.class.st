@@ -87,7 +87,7 @@ Poster >> filename: anObject [
 Poster >> initializeWith: chapter [
 	path := 'resources/', chapter chapterPath, '/jpg/'.
 
-	filename := chapter chapterFileName, '.jpg'.
+	filename := chapter chapterFilename, '.jpg'.
 
 ]
 

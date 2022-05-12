@@ -36,14 +36,12 @@ LightModelPoster >> accurate: anObject [
 
 { #category : #accessing }
 LightModelPoster >> assurePosterImage [
-	| file fd |
+	| stream |
 	
-	( ( fd := FileDirectory uri: path ) fileExists: filename ) ifFalse: [
-		[ 
-			file  := fd fileNamed: filename.
-			file binary.	
-			file nextPutAll: (HTTPSocket httpGet: self link) contents. 
-		] ensure: [file close].
+	(FileSystem root / self posterPath / self posterFilename) exists ifFalse: [
+		stream := (FileSystem root / self posterPath / self posterFilename) unbufferedBinaryWriteStream.
+		stream nextPutAll: (ZnEasy get: self link) entity contents.
+		stream close.
 	].
 ]
 
@@ -63,10 +61,9 @@ LightModelPoster >> comments [
 	^ OrderedCollection new.
 ]
 
-{ #category : #accessing }
-LightModelPoster >> filename [
-	^ chapter chapterFileName, '.jpg'.
-
+{ #category : #'as yet unclassified' }
+LightModelPoster >> fileExtension [
+	^ (self link substrings: '.') last
 
 ]
 
@@ -110,9 +107,16 @@ LightModelPoster >> missingText [
 ]
 
 { #category : #accessing }
-LightModelPoster >> path [
+LightModelPoster >> posterFilename [
+	^ chapter chapterFilename, '.', self fileExtension.
+
+
+]
+
+{ #category : #accessing }
+LightModelPoster >> posterPath [
 	| path |
-	path := FileSystem root / chapter book path / 'jpg'.
+	path := FileSystem root / chapter book path / 'im'.
 	path exists ifFalse: [  	path createDirectory   ].
   ^ path pathString
 
