@@ -139,7 +139,7 @@ LightModelChapter class >> readChapter: aStream into: newChap [
 	newChap crest: (TextPair read: aStream).
 	newChap film: (TextPair read: aStream).
 	newChap filmData: (FilmData read: aStream).
-	newChap poster: (Poster read: aStream).
+	newChap poster: (LightModelPoster read: aStream).
 
 	self assert: (aStream nextLine = self outlineMarker).
 	self assert: aStream nextLine isEmpty.

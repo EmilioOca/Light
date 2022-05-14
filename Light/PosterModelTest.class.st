@@ -20,10 +20,6 @@ PosterModelTest >> testPosterModelAssurePosterImage [
 
    self deny: (FileSystem root / poster posterPath / poster posterFilename) exists.
 	poster assurePosterImage.
-"	stream := (FileSystem root / poster posterPath / poster posterFilename) unbufferedBinaryWriteStream.
-	stream nextPutAll: (ZnEasy get: 'https://webmail.dc.uba.ar/logo_2018.png') entity contents.
-	stream close.
-"
    self assert: (FileSystem root / poster posterPath / poster posterFilename) exists.
 
 ]

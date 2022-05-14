@@ -16,7 +16,7 @@ LightPosterComponent class >> new: aTextPair [
 
 { #category : #initialization }
 LightPosterComponent >> filename [
-	^ poster filename
+	^ poster posterFilename
 ]
 
 { #category : #initialization }
@@ -31,7 +31,7 @@ LightPosterComponent >> isMissing [
 
 { #category : #initialization }
 LightPosterComponent >> path [
-	^ poster path
+	^ poster posterPath
 ]
 
 { #category : #initialization }
@@ -50,11 +50,23 @@ LightPosterComponent >> renderPosterOn: html [
 	| links file chapter |
 
 	self isMissing ifFalse: [
+		poster assurePosterImage. 
+		(FileSystem root / poster posterPath / poster posterFilename) exists ifTrue: [ 
+			html image form: 
+			( [ (ImageMorph fromStream: (FileSystem root / poster posterPath / poster posterFilename) binaryReadStream) imageForm 
+			  ] on: Exception  do: [ 
+				(EllipseMorph new 
+		   			color: Color orange;
+  			   		extent: 200 @ 100;
+   	 		   		borderWidth: 3;
+  	    		 	imageForm) 
+			] ). 
+ 	      
+		].
 "		chapterView class = LCFChapterHtmlView  ifTrue: [
 			self assurePosterImage.
 			html image altText: 'poster'; url: 'http://lcf.seasidehosting.st/', self path, self filename.
-	"		html image altText: 'poster'; url: poster link.
-		"] ifFalse: [
+	] ifFalse: [
 			html text: self link.
 		]"
 	] ifTrue: [
