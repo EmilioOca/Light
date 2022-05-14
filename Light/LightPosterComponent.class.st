@@ -52,15 +52,12 @@ LightPosterComponent >> renderPosterOn: html [
 	self isMissing ifFalse: [
 		poster assurePosterImage. 
 		(FileSystem root / poster posterPath / poster posterFilename) exists ifTrue: [ 
-			html image form: 
-			( [ (ImageMorph fromStream: (FileSystem root / poster posterPath / poster posterFilename) binaryReadStream) imageForm 
-			  ] on: Exception  do: [ 
-				(EllipseMorph new 
-		   			color: Color orange;
-  			   		extent: 200 @ 100;
-   	 		   		borderWidth: 3;
-  	    		 	imageForm) 
-			] ). 
+			[ html image form: 
+				(ImageMorph fromStream: (FileSystem root / poster posterPath / poster posterFilename) binaryReadStream) imageForm 
+			] on: Exception  do: [ 
+			 	(FileSystem root / poster posterPath / poster posterFilename) delete.
+				html text: poster link. 
+			]. 
  	      
 		].
 "		chapterView class = LCFChapterHtmlView  ifTrue: [
