@@ -55,7 +55,7 @@ LightPosterComponent >> renderPosterOn: html [
 			[ html image form: 
 				(ImageMorph fromStream: (FileSystem root / poster posterPath / poster posterFilename) binaryReadStream) imageForm 
 			] on: Exception  do: [ 
-			 	(FileSystem root / poster posterPath / poster posterFilename) delete.
+			 	[(FileSystem root / poster posterPath / poster posterFilename) delete.] on: Exception do: [  ].
 				html text: poster link. 
 			]. 
  	      
