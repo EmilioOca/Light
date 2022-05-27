@@ -30,17 +30,30 @@ LigBookChapterComponent >> holder: aLigCicloPage [
 
 { #category : #rendering }
 LigBookChapterComponent >> renderChapterOn: html [
-	html div: [ 
-		self renderNavHeadingOn: html.
-		html div: [ 
-			self renderSingle: self chapter date on: html.
-			self renderLecturesOn: html.
-			self renderSingle: self chapter crest on: html 
-		] 
+	html table: [
+      html tableRow: [
+   			html tableData: [
+				html div: [ 
+					self renderNavHeadingOn: html.
+					html div: [ 
+						self renderSingle: self chapter date on: html.
+						self renderLecturesOn: html.
+						self renderSingle: self chapter crest on: html 
+					].
+					self renderSingle: self chapter film on: html.
+					self renderFilmDataOn: html.
+				].
+			].
+			html tableData: [
+				html div: [ 
+					self renderPosterOn: html.
+				].
+			]
+		] .
 	].
-	self renderSingle: self chapter film on: html.
-	self renderFilmDataOn: html.
-	self renderPosterOn: html.
+
+
+	html horizontalRule.
 	self renderSection: self chapter outline
 		id: 'outline'
 		with: 'Outline'

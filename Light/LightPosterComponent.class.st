@@ -53,7 +53,8 @@ LightPosterComponent >> renderPosterOn: html [
 		poster assurePosterImage. 
 		(FileSystem root / poster posterPath / poster posterFilename) exists ifTrue: [ 
 			[ html image form: 
-				((ImageMorph fromStream: (FileSystem root / poster posterPath / poster posterFilename) binaryReadStream)resize: 260@260) imageForm 
+				((ImageMorph fromStream: (FileSystem root / poster posterPath / poster posterFilename) binaryReadStream)
+				             resize: 300@300) imageForm 
 			] on: Exception  do: [ 
 			 	[(FileSystem root / poster posterPath / poster posterFilename) delete.] on: Exception do: [  ].
 				html text: poster link. 
