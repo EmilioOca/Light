@@ -36,7 +36,7 @@ LigBookChapterComponent >> renderChapterOn: html [
 				html div: [ 
 					self renderNavHeadingOn: html.
 					html div: [ 
-						self renderSingle: self chapter date on: html.
+						self renderSingle: self chapter date on: html like: LightHeadingPairComponent.
 						self renderLecturesOn: html.
 						self renderSingle: self chapter crest on: html 
 					].
@@ -167,7 +167,13 @@ LigBookChapterComponent >> renderSectionHeading: id with: text on: html [
 ]
 
 { #category : #rendering }
-LigBookChapterComponent >> renderSingle: pair on: html [.
-	html render: ( LightPairComponent new: pair )
+LigBookChapterComponent >> renderSingle: pair on: html [
+	self renderSingle: pair on: html like: LightPairComponent
+
+]
+
+{ #category : #rendering }
+LigBookChapterComponent >> renderSingle: pair on: html like: componentClass [
+	html render: ( componentClass new: pair )
 
 ]
