@@ -30,11 +30,12 @@ LigBookChapterComponent >> holder: aLigCicloPage [
 
 { #category : #rendering }
 LigBookChapterComponent >> renderChapterOn: html [
+	self renderNavHeadingOn: html.
+
 	html table: [
       html tableRow: [
    			html tableData: [
 				html div: [ 
-					self renderNavHeadingOn: html.
 					html div: [ 
 						self renderSingle: self chapter date on: html like: LightHeadingPairComponent.
 						self renderLecturesOn: html.
@@ -130,10 +131,12 @@ LigBookChapterComponent >> renderMany: section on: html [
 
 { #category : #rendering }
 LigBookChapterComponent >> renderNavHeadingOn: html [
-	html paragraph: [ 
-		self renderNavOn: html chapter: self holder present previousChapter like: '<<'.
-		html text: ' '.
-		self renderNavOn: html chapter: self holder present nextChapter like: '>>' 
+
+	html table: [
+      html tableRow: [
+   			html tableData: [	self renderNavOn: html chapter: self holder present previousChapter like: '<<'.			].
+			html tableData: [ 	self renderNavOn: html chapter: self holder present nextChapter like: '>>'.			]
+		] .
 	].
 
 ]
@@ -143,8 +146,7 @@ LigBookChapterComponent >> renderNavOn: html chapter: prev like: arrows [
 	^ html anchor
 		callback: [ self holder present: prev ];
 		with:
-			arrows , prev date spa , ', ' , prev film eng
-				, prev moment prettyMoment , arrows
+			arrows, ' ', prev date spa , ', ' , prev film eng, prev moment prettyMoment, ' ', arrows
 ]
 
 { #category : #rendering }
