@@ -166,6 +166,7 @@ LightDistribution class >> initialize [
 				addLibrary: PRBlueprintLibrary;
 				"addLibrary: PTDeploymentLibrary;  sriptaculous"
     			"addLibrary: SUDeploymentLibrary; sriptaculous"
+				preferenceAt: #sessionClass put: LightSession;
 				yourself.
 	
 	#EFO: "To configure a personal session MiSession inherited from WASession
@@ -269,6 +270,13 @@ LightDistribution >> cover [
 	^ self page: #cover
 ]
 
+{ #category : #rendering }
+LightDistribution >> editContact: aSession [
+    self call: (LightUserComponent new 
+        user:  aSession user;
+        yourself)
+]
+
 { #category : #'page access' }
 LightDistribution >> glosarios [
 	^ components at: #glosarios ifAbsent: [ components at: #glosarios put: (LigGlosariosPage newOn: self) ]
@@ -334,9 +342,10 @@ LightDistribution >> renderTitleOn: html [
 				html text: 'Light Camera Faith'.
 				html space.
 				"html tbsPullRight small: 'Subtext for header' "
-				html small 
-					with: [ html text: 'Signed in as '. 
-				     html tbsNavbarLink: 'Mark Otto' ]
+
+				html small text: self session user name, ' (', self session user role, ')'.
+				html anchor callback: [ self editContact: self session ];
+        						with: 'log in'.
 			]
 		]
 	].
