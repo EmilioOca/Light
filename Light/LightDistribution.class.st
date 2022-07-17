@@ -142,7 +142,7 @@ Class {
 		'lightApp',
 		'components'
 	],
-	#category : #'Light-Pages'
+	#category : #Light
 }
 
 { #category : #'as yet unclassified' }
@@ -272,9 +272,11 @@ LightDistribution >> cover [
 
 { #category : #rendering }
 LightDistribution >> editContact: aSession [
-    self call: (LightUserComponent new 
-        user:  aSession user;
-        yourself)
+	self session login: 
+		(self call: (LightUserComponent new 
+  		  				    user:  aSession user;
+    		   				 yourself)
+		)
 ]
 
 { #category : #'page access' }
@@ -342,10 +344,16 @@ LightDistribution >> renderTitleOn: html [
 				html text: 'Light Camera Faith'.
 				html space.
 				"html tbsPullRight small: 'Subtext for header' "
-
+			].
+			html div: [
 				html small text: self session user name, ' (', self session user role, ')'.
-				html anchor callback: [ self editContact: self session ];
+				self session ifLoggedIn: [ 
+					html anchor callback: [ self session logout ];
+        						with: 'log out'.
+				] ifNot: [ 
+					html anchor callback: [ self editContact: self session ];
         						with: 'log in'.
+				]
 			]
 		]
 	].

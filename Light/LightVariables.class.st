@@ -8,6 +8,17 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
+LightVariables class >> adminBase [
+	"self resourceBase "
+	| path |
+	path := FileSystem root / self rootPath / 'admin'.
+	path exists ifFalse: [  	path createDirectory   ].
+  ^ path pathString
+
+
+]
+
+{ #category : #'as yet unclassified' }
 LightVariables class >> resourceBase [
 	"self resourceBase "
 	| path |

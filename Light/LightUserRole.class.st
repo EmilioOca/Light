@@ -10,7 +10,7 @@ Class {
 
 { #category : #'as yet unclassified' }
 LightUserRole class >> admin [
-	^ self new priority: 7 name: 'Admin'
+	^ self new priority: 7 name: 'admin'
 ]
 
 { #category : #'as yet unclassified' }
@@ -20,7 +20,17 @@ LightUserRole class >> anonymous [
 
 { #category : #'as yet unclassified' }
 LightUserRole class >> editor [
-	^ self new priority: 2 name: 'Editor'
+	^ self new priority: 2 name: 'editor'
+]
+
+{ #category : #creation }
+LightUserRole class >> for: roleKey [
+
+	(roleKey asSymbol = #admin) ifTrue: [ ^ self admin ].
+	
+	(roleKey asSymbol = #editor) ifTrue: [ ^ self editor ].
+	
+	^ self anonymous. 
 ]
 
 { #category : #accesors }
