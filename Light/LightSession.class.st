@@ -9,6 +9,11 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
+LightSession >> ifLoggedIn: loggedAction [ 
+    ^ self isLoggedIn ifTrue: loggedAction 
+]
+
+{ #category : #'as yet unclassified' }
 LightSession >> ifLoggedIn: loggedAction ifNot: notLoggedAction [
     ^ self isLoggedIn ifTrue: loggedAction ifFalse: notLoggedAction
 ]

@@ -40,7 +40,8 @@ LightModelPoster >> assurePosterImage [
 	
 	(FileSystem root / self posterPath / self posterFilename) exists ifFalse: [
 		stream := (FileSystem root / self posterPath / self posterFilename) unbufferedBinaryWriteStream.
-		stream nextPutAll: (ZnEasy get: self link) entity contents.
+		[stream nextPutAll: (ZnEasy get: self link) entity contents] on: Exception do: [ Transcript show: 'error downloading from: ', self link ].
+.
 		stream close.
 	].
 ]

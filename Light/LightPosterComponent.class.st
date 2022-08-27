@@ -36,13 +36,18 @@ LightPosterComponent >> path [
 
 { #category : #initialization }
 LightPosterComponent >> renderContentOn: html [
-" 	(self shouldHide: chapterView) ifTrue: [ ^self ]." 
+ 	self shouldHide ifTrue: [ ^self ].
 	
 	html div: [ 
 		self renderPosterOn: html.
-"		self renderEditControlOn: chapterView with: html."
+		self renderEditControlOn: html.
 		html break; break.
 	].
+]
+
+{ #category : #'as yet unclassified' }
+LightPosterComponent >> renderEditControlOn: aWAHtmlCanvas [ 
+	" self shouldBeImplemented."
 ]
 
 { #category : #initialization }
@@ -57,7 +62,12 @@ LightPosterComponent >> renderPosterOn: html [
 				             resize: 300@300) imageForm 
 			] on: Exception  do: [ 
 			 	[(FileSystem root / poster posterPath / poster posterFilename) delete.] on: Exception do: [  ].
-				html text: poster link. 
+				self session ifLoggedIn: [ 
+					html text: poster link. 
+					(html image)
+						title: 'editar';
+						height: 16;
+						url: LightLibrary / #editPng  ].
 			]. 
  	      
 		].
@@ -87,5 +97,11 @@ LightPosterComponent >> renderPosterOn: html with: chapterView [
 	] ifTrue: [
 		html text: '<Poster sin definir>'
 	].
+
+]
+
+{ #category : #initialization }
+LightPosterComponent >> shouldHide [
+	^ self isMissing and: [ self session isLoggedIn not ] .
 
 ]
